@@ -1,3 +1,8 @@
 {
-  "presets": ["es2015", "stage-0", "react"]
+  "presets": ["es2015", "stage-0", "react"],
+  "plugins": [
+  	"syntax-export-extensions",
+  	"transform-es3-member-expression-literals",
+  	"transform-es3-property-literals"
+  ]
 }

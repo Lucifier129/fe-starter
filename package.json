@@ -5,25 +5,42 @@
   "description": "A boilerplate of front-end project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --history-api-fallback --hot --inline --progress --colors --port 3000",
-    "build": "NODE_ENV=production webpack --progress --colors"
+    "build:lib": "./node_modules/.bin/webpack --config webpack.config.lib.js",
+    "build:lib:dev": "./node_modules/.bin/webpack --config webpack.config.lib.dev.js",
+    "build:dev": "./node_modules/.bin/webpack --config webpack.config.dev.js",
+    "build:prod": "./node_modules/.bin/webpack --config webpack.config.prod.js",
+    "build": "npm run build:lib && npm run build:prod"
   },
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.3.26",
+    "babel-eslint": "^4.1.6",
     "babel-loader": "^6.2.0",
-    "babel-plugin-transform-runtime": "^6.3.13",
+    "babel-plugin-syntax-export-extensions": "^6.3.13",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.3.13",
+    "babel-plugin-transform-es3-property-literals": "^6.3.13",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
+    "bundle-loader": "^0.5.4",
+    "es3ify-loader": "^0.1.0",
+    "eslint": "1.10.3",
+    "eslint-loader": "1.1.1",
+    "eslint-plugin-react": "3.10.0",
+    "gulp": "^3.9.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-util": "^3.0.7",
+    "npm": "^3.5.2",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.0",
-    "webpack-hot-middleware": "^2.2.0"
+    "webpack-dev-server": "^1.12.0"
   },
   "dependencies": {
     "classnames": "^2.1.2",
+    "es5-shim": "^4.4.1",
+    "es6-promise": "^3.0.2",
+    "jquery": "^1.11.3",
     "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "react-lite": "0.0.13"
   }
 }
