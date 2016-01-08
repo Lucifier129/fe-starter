@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var path = path = require('path')
+var rootPath = path.dirname(__dirname)
 
 module.exports = {
     debug: true,
@@ -7,8 +8,7 @@ module.exports = {
         'vendor': './lib/index'
     },
     output: {
-        publicPath: '',
-        path: path.join(__dirname, 'dist/lib'),
+        path: path.join(rootPath, 'dist/lib'),
         chunkFilename: '[name].js',
         filename: '[name].js',
         libraryTarget: 'umd'
@@ -22,12 +22,13 @@ module.exports = {
     },
     resolve: {
         extensions: ['', '.js', '.jsx'],
+        root: rootPath,
         alias: {
-            'polyfills': path.join(__dirname, 'lib/polyfills'),
-            'json2': path.join(__dirname, 'lib/json2'),
-            'requestAnimationFrame': path.join(__dirname, 'lib/requestAnimationFrame'),
-            'react': path.join(__dirname, 'lib/react-lite.common'),
-            'react-dom': path.join(__dirname, 'lib/react-lite.common')
+            'polyfills': path.join(rootPath, 'lib/polyfills'),
+            'json2': path.join(rootPath, 'lib/json2'),
+            'requestAnimationFrame': path.join(rootPath, 'lib/requestAnimationFrame'),
+            'react': path.join(rootPath, 'lib/react-lite.common'),
+            'react-dom': path.join(rootPath, 'lib/react-lite.common')
         }
     },
     plugins: [

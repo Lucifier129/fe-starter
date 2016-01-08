@@ -1,6 +1,6 @@
 var webpack = require('webpack')
 var path = path = require('path')
-
+var rootPath = path.dirname(__dirname)
 var banner = 'lastmodify: ' + new Date().toLocaleString()
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
     },
     output: {
         publicPath: '/dist/',
-        path: path.join(__dirname, 'dist'),
+        path: path.join(rootPath, 'dist'),
         filename: '[name]/bundle.js'
     },
     module: {
@@ -21,12 +21,13 @@ module.exports = {
         }],
         postLoaders: [{
             test: /\.jsx?$/,
+            exclude: /node_modules/,
             loaders: ['es3ify-loader'],
         }]
     },
     resolve: {
         extensions: ['', '.js', '.jsx'],
-        root: path.join(__dirname, 'src'),
+        root: path.join(rootPath, 'src'),
         alias: {}
     },
     plugins: [

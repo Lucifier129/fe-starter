@@ -2,7 +2,7 @@ var webpack = require('webpack')
 var taskName = process.argv[2]
 var entryName = taskName.split(':')[0]
 var mode = taskName.split(':')[1] || 'dev'
-var webpackConfig = require('./webpack.config.' + mode)
+var webpackConfig = require('./webpack/webpack.config.' + mode)
 var config = Object.create(webpackConfig)
 
 if (webpackConfig.entry[entryName]) {

@@ -1,13 +1,12 @@
 var gulp = require('gulp')
 var gutil = require("gulp-util")
 var path = require('path')
-var plumber = require('gulp-plumber')
 var webpack = require('webpack')
 
 var taskName = process.argv[2]
 var entryName = taskName.split(':')[0]
 var mode = taskName.split(':')[1] || 'dev'
-var webpackConfig = require('./webpack.config.' + mode)
+var webpackConfig = require('./webpack/webpack.config.' + mode)
 
 gulp.task(taskName, function(callback) {
     var config = Object.create(webpackConfig)

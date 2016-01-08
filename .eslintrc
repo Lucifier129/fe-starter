@@ -31,7 +31,7 @@
     "react/forbid-prop-types": [1, {"forbid": "any"}],
     "react/jsx-boolean-value": 1,
     "react/jsx-closing-bracket-location": 0,
-    "react/jsx-curly-spacing": 1,
+    "react/jsx-curly-spacing": 0,
     "react/jsx-indent-props": 0,
     "react/jsx-key": 0,
     "react/jsx-max-props-per-line": 0,
@@ -60,10 +60,11 @@
     "react/wrap-multilines": 1
   },
   "globals": {
-    React: true,
-    ReactDOM: true,
-    jQuery: true,
-    $: true,
-    App: true
+    "React": 0,
+    "ReactDOM": 0,
+    "jQuery": 0,
+    "$": 0,
+    "App": 0,
+    "GV": 0
   }
 }
