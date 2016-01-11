@@ -17,12 +17,13 @@ module.exports = {
         loaders: [{
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
-            loaders: ['babel-loader', 'eslint']
+            loaders: ['eslint', 'babel-loader']
         }],
         postLoaders: [{
             test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loaders: ['es3ify-loader'],
+            // babel-rumtime 也有 a.default 形式的代码，不能排除
+            //exclude: /node_modules/,
+            loaders: ['es3ify-loader']
         }]
     },
     resolve: {

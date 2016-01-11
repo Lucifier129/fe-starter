@@ -1,7 +1,10 @@
 export default class List extends React.Component {
 	static defaultProps = {
 		className: 'test'
-	}
+	};
+	handleClick = e => {
+		console.log($(e.currentTarget).index)
+	};
 	constructor(props, context) {
 		super(props, context)
 		this.abc = 'abdsf'
@@ -10,9 +13,6 @@ export default class List extends React.Component {
 		$(this.refs.list).find('li:eq(2)').css({
 			background: '#f00'
 		})
-	}
-	handleClick = e => {
-		console.log($(e.currentTarget).index)
 	}
 	render() {
 		let { className } = this.props

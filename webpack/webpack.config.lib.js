@@ -4,15 +4,6 @@ var rootPath = path.dirname(__dirname)
 
 module.exports = {
     debug: true,
-    entry: {
-        'vendor': './lib/index'
-    },
-    output: {
-        path: path.join(rootPath, 'dist/lib'),
-        chunkFilename: '[name].js',
-        filename: '[name].js',
-        libraryTarget: 'umd'
-    },
     module: {
         loaders: [{
             test: /\.(js|jsx)$/,
