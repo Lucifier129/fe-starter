@@ -1,2 +1,0 @@
-/*! lastmodify: 2016-01-11 12:16:08 */
-!function(e){function t(n){if(r[n])return r[n].exports;var o=r[n]={exports:{},id:n,loaded:!1};return e[n].call(o.exports,o,o.exports,t),o.loaded=!0,o.exports}var r={};return t.m=e,t.c=r,t.p="/dist/",t(0)}([function(e,t){"use strict";var r=function(){return React.createElement("div",null,"hello world--example")};ReactDOM.render(React.createElement(r,null),document.getElementById("root"))}]);
