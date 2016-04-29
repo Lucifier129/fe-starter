@@ -1,11 +1,20 @@
-import List from './component'
+import React from 'react';
+import {render} from 'react-dom';
+import {Router, Route, hashHistory, IndexRoute} from 'react-router';
 
-let Root = () => <div>
-	<h1>hello world--test-change,1231</h1>
-	<List />
-</div>
 
-ReactDOM.render(
-	<Root />,
-	document.getElementById('root')
-)
+import APP from './App';
+import Example from './Example';
+import Home from './Home';
+
+
+
+render(
+  <Router history={hashHistory}>
+    <Route path="/" component={APP}>
+      <Route path="home" component={Home}>
+        <Route path="example" component={Example}></Route>
+      </Route>
+    </Route>
+  </Router>
+, document.getElementById('app'))

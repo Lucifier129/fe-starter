@@ -14,8 +14,16 @@ var pageConfigs = {
             path: path.join(rootPath, 'dist'),
             filename: '[name]/bundle.js'
         },
+        resolve: {
+            extensions: ['', '.js', '.jsx', '.js-lazy', '.jsx-lazy'],
+            root: rootPath,
+            alias: {
+                'react': 'react-lite',
+                'react-dom': 'react-lite'
+            }
+        },
         // 特殊字段，页面js的库/框架依赖
-        libs: ['vendor'],
+        // libs: ['vendor'],
         // 特殊字段，生产环境的特殊配置
         productionConfig: {}
     },
